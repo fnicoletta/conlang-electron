@@ -1,14 +1,12 @@
-import {useState} from 'react'
+import { $Container,  $Button } from 'routes/Root/root.styled.tsx';
 
 export default function Root() {
-    const [inputValue, setInputValue] = useState("")
 
     return (
-        <>
-            <h1>Type something</h1>
-            <input value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
-            <p>{inputValue}</p>
-        </>
+      <$Container>
+        <$Button>Load Language</$Button>
+        <$Button>New Language</$Button>
+      </$Container>
     )
 }
 
