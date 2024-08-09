@@ -23,6 +23,9 @@
       "components/*": [
         "./src/components/*"
       ],
+      "utils/*": [
+        "./src/utils/*"
+      ],
       "data/*": [
         "./src/data/*"
       ],
