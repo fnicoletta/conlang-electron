@@ -13,7 +13,7 @@
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.7.3",
     "electron-json-storage": "^4.6.0",
-    "fs": "^0.0.1-security",
+    "electron-store": "^10.0.0",
     "jotai": "^2.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@types/electron-json-storage": "^4.5.4",
+    "@types/electron-store": "^3.2.0",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.1.1",

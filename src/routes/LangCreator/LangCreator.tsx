@@ -1,5 +1,5 @@
 import { $Container, $Table } from 'routes/LangCreator/LangCreator.styled.tsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { conjugateVerb, createWordList, evolveSound } from '@/utils';
 import { basic, IWordObject } from 'data/wordLists';
 import { saveData } from 'data/api/saveData.ts';
@@ -26,6 +26,11 @@ export default function LangCreator({}: ILangCreator) {
 	const exampleVerbTranslation = 'think';
 	const exampleVerb = lang.length ? removeDash(lang.filter(word => word.translation === exampleVerbTranslation)[0].word) : '';
 
+	useEffect(() => {
+		const savedWords = localStorage.getItem('words');
+
+		if (savedWords) setLang(JSON.parse(savedWords));
+	}, []);
 
 	function handleGen() {
 		setLang(createWordList(basic));
@@ -53,7 +58,7 @@ export default function LangCreator({}: ILangCreator) {
 	function translateAdjective(word: string, identifiers: string[], ending: string) {
 		const isAdv = (arr: string[]) => arr.includes('adv');
 
-		if (isAdv(identifiers)) return `${removeDash(word)}oice`;
+		if (isAdv(identifiers)) return `${removeDash(word)}ice`;
 		else return `${removeDash(word)}${ending}`;
 	}
 
